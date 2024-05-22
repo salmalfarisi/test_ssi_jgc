@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "0365addd-581f-44a9-b428-6ebc6883086e",
+		"name": "Sinar Sakti Internasional",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19029745"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"description": "optional. bisa upload file. bisa juga kirim link url. pilih salah satu",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "url_photo",
+							"value": "https://fozaworld.com/",
+							"description": "optional. bisa upload file. bisa juga kirim link url. pilih salah satu",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "nip",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "department",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "join_date",
+							"value": "2024-05-01",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "kontrak",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}employee",
+					"host": [
+						"{{url}}employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update by Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"description": "optional. bisa upload file. bisa juga kirim link url. pilih salah satu",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "url_photo",
+							"value": "https://fozaworld.com/",
+							"description": "optional. bisa upload file. bisa juga kirim link url. pilih salah satu",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "nip",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "department",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "join_date",
+							"value": "2024-05-01",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "kontrak",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}employee/1",
+					"host": [
+						"{{url}}employee"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}employee",
+					"host": [
+						"{{url}}employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail data by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}employee/1",
+					"host": [
+						"{{url}}employee"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete data by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}employee/1",
+					"host": [
+						"{{url}}employee"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file csv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csv",
+							"type": "file",
+							"src": "postman-cloud:///1ef178ee-16ff-4360-9afe-f0e634aaa9c6"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}employee/upload/csv",
+					"host": [
+						"{{url}}employee"
+					],
+					"path": [
+						"upload",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}employee/download/file?type=csv",
+					"host": [
+						"{{url}}employee"
+					],
+					"path": [
+						"download",
+						"file"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "csv",
+							"description": "pilihan value = \"csv\" atau \"pdf\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000/api/",
+			"type": "string"
+		}
+	]
+}
